@@ -1,0 +1,29 @@
+/*Mixins*/
+@mixin latoBoltWhite {
+    color: $white;
+    font-family: 'Lato Bolt';
+}
+
+@mixin latoBoltBlack {
+    color: $black;
+    font-family: 'Lato Bolt';
+}
+
+@mixin latoRegularWhite {
+    color: $white;
+    font-family: 'Lato Regular';
+}
+
+@mixin playfairDisplayBoldItalic {
+    color: $black;
+    font-family: 'Playfair Display Bold Italic';
+}
+
+@mixin playfairDisplayItalicWhite {
+    color: $white;
+    font-family: 'Playfair Display Italic';
+}
+
+@mixin uppercase {
+    text-transform: uppercase;
+}

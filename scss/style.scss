@@ -1,0 +1,709 @@
+/*Imports*/
+@import "vars";
+@import "templates";
+@import "mixins";
+@import "fonts";
+
+
+/*Main Styly*/
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    line-height: 1;
+    background: $white;
+    font-family: 'Lato Regular', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, button {
+    cursor: pointer;
+    outline-style: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1330px;
+    padding: 0px 20px;
+    margin: auto;
+}
+
+/*Header*/
+.header {
+    background: $light-smoke;
+}
+
+.header-top {
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1px;
+    align-items: center;
+}
+
+.call {
+
+    &__icon {
+        width: 10px;
+        height: 10px;
+        margin-right: 20px;
+    }
+
+    &__text {
+        display: inline;
+        font-size: 11px;
+        color: $asphalt;
+    }
+}
+
+.sign-up {
+
+    &__link {
+        font-family: Lato;
+        font-size: 11px;
+        color: $asphalt;
+        @include uppercase;
+    }
+
+    &__link::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 8px;
+        background: $asphalt;
+        margin: 0px 30px;
+    }
+}
+
+.header-berger {
+    display: none;
+
+    &__item {
+        background: $black;
+        display: block;
+        width: 15px;
+        height: 1px;
+        margin-bottom: 2px;
+        margin-top: 3px;
+        cursor: pointer;
+    }
+}
+
+/*Shophia*/
+.shophia-wrapp {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px 20px;
+}
+
+.navigation, .social {
+    margin-top: 15px;
+}
+
+.navigation {
+
+    &__wrapp {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    &__link {
+        color: $black;
+        font-family: 'Playfair Display Italic';
+        font-size: 18px;
+        font-style: italic;
+    }
+}
+
+.shophia__logo {
+    color: $black;
+    font-size: 72px;
+    line-height: 94px;
+    font-family: 'Krinkes Decor';
+}
+
+.social {
+    display: flex;
+
+    &__link {
+        border: 1px solid $sand;
+        display: flex;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-right: 12px;
+    }
+
+    &__link-svg {
+        width: 15px;
+        height: 15px;
+        fill: $sand;
+    }
+
+    &__link:hover {
+        border-color: $black;
+    }
+}
+
+.social__link:nth-child(4) {
+    margin-right: 50px;
+}
+
+.social__link:hover .social__link-svg {
+    fill: $black;
+}
+
+.social-btn {
+
+    &__rupian {
+        position: relative;
+        background: $black;
+        color: $white;
+        font-family: 'Lato Regular';
+        font-size: 12px;
+        @include uppercase;
+        font-weight: 700;
+        padding: 14px 12px 14px 14px;
+    }
+
+    &__arrow {
+        width: 11px;
+        vertical-align: middle;
+        margin-left: 12px;
+    }
+}
+
+/*Main Slider*/
+.slider-main {
+    background: $dark-grey url("/images/slider/slider-bg.png") no-repeat center top;
+    background-size: cover;
+    padding: 150px 0px 166px;
+    text-align: center;
+}
+
+.slider-wrapper {
+    &__btn {
+        @include latoBoltWhite;
+        font-size: 24px;
+        line-height: 18px;
+        @include uppercase;
+        padding: 18px 29px;
+        background: $dirty-orange;
+        transition: background 1s ease;
+    }
+
+    &__btn:hover {
+        background: #faaba4;
+    }
+}
+
+.slider-content {
+    max-width: 273px;
+    border: 2px solid $white;
+    border-radius: 3px;
+    padding: 6px;
+    margin: 0px auto 57px;
+
+    &__wrapp {
+        border: 1px solid $white;
+        text-align: center;
+    }
+
+    &__text {
+        @include latoBoltWhite;
+        font-size: 19px;
+        line-height: 15.66px;
+        @include uppercase;
+        margin-top: 30px;
+    }
+
+    &__header {
+        @include latoBoltBlack;
+        font-size: 59px;
+        line-height: 41.76px;
+        @include uppercase;
+        margin-top: 38px;
+    }
+
+    &__info {
+        @include latoBoltWhite;
+        font-size: 20px;
+        line-height: 14.76px;
+        @include uppercase;
+        margin-top: 34px;
+    }
+
+    &__discount {
+        @include latoBoltBlack;
+        font-size: 31px;
+        line-height: 27.76px;
+        @include uppercase;
+        margin: 27px 0px 33px;
+    }
+}
+
+/*Slick Slider Settings*/
+.slick-dots {
+    bottom: 30px;
+}
+
+.slick-dots li button {
+    background: $smoke;
+    transform: rotate(45deg);
+}
+
+.slick-dots li button:before {
+    color: transparent;
+}
+
+.slick-dots li.slick-active button:before {
+    color: transparent;
+    background: $black;
+}
+
+.slick-dots li {
+    margin-left: 15px;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
+
+/*Info*/
+.info-wrapp {
+    display: flex;
+    padding: 69px 0px 100px;
+
+    &__shipping, &__money-back, &__support {
+        display: flex;
+        align-items: center;
+        padding: 24px 64px;
+    }
+
+    &__shipping-logo {
+        margin-right: 20px;
+    }
+
+    &__shipping {
+        width: 415px;
+        background: $sand;
+        clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 50%, 0 0);
+    }
+
+    &__title {
+        @include latoBoltWhite;
+        font-size: 30px;
+        line-height: 23px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        @include latoRegularWhite;
+        font-size: 14px;
+    }
+
+    &__money-back {
+        width: 455px;
+        background: $black;
+        clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 10% 50%, 0 0);
+    }
+
+    &__support {
+        width: 415px;
+        background: $sand;
+        clip-path: polygon(100% 0, 100% 50%, 100% 100%, 10% 100%, 0 50%, 10% 0);
+    }
+}
+
+/*Collection*/
+.collection__section {
+    margin-bottom: 65px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__line {
+        background: $milk;
+        height: 1px;
+        width: 400px;
+    }
+
+    &__header {
+        @include playfairDisplayBoldItalic;
+        font-size: 29.6px;
+        margin: 0px 172px;
+        position: relative;
+        white-space: nowrap;
+
+        &::after, &::before {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: $sand;
+            position: absolute;
+            transform: rotate(45deg) translateY(-50%);
+        }
+
+        &::after {
+            left: -105px;
+            top: 45%;
+        }
+
+        &::before {
+            right: -90px;
+            top: 45%;
+        }
+    }
+}
+
+.collection__wrapp {
+    padding-bottom: 100px;
+}
+
+.collection-catalog {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__col-left, &__col-right {
+        width: 400px;
+    }
+
+    &__content {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 400px;
+        padding: 25px;
+
+        &_extra {
+            width: 460px;
+            height: 820px;
+            margin: 0px 13px;
+        }
+
+        &:nth-child(1) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__content-wrapp {
+        border: 3px solid $white;
+        border-radius: 3px;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.651);
+        }
+
+        &:hover .collection-catalog__btn {
+            visibility: visible;
+        }
+
+        &:hover::after {
+            visibility: visible;
+        }
+
+        &::after {
+            content: url("/images/collection/plus.png");
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+        }
+    }
+
+    &__btn {
+        background: $dark-orange;
+        @include latoBoltWhite;
+        display: inline-block;
+        font-size: 14.5px;
+        padding: 15px;
+        margin-bottom: 30px;
+        visibility: hidden;
+    }
+}
+
+/*Catalog*/
+.catalog {
+
+    &__section {
+        margin-bottom: 65px;
+    }
+
+    &__wrapp {
+        padding-bottom: 110px;
+    }
+}
+
+.catalog-brands {
+    border: 1px solid $milk;
+    border-radius: 3px;
+    padding: 15px;
+
+    &__wrapp {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        position: relative;
+        max-width: 300px;
+        max-height: 345px;
+        overflow: hidden;
+        margin: 0px 13px 13px 0px;
+    }
+
+    &__discount {
+        position: absolute;
+        left: 5%;
+        top: 5%;
+    }
+
+    &__logo {
+        max-width: 100%;
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &-wrapp {
+            border-bottom: 50px solid $black;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            height: 0;
+            width: 200px;
+            color: $white;
+            white-space: nowrap;
+        }
+
+        &-text {
+            display: inline-block;
+            margin-top: 17px;
+        }
+
+    }
+}
+
+.catalog-brands__btn_checked .catalog-brands__btn-wrapp {
+    border-bottom-color: $dark-orange;
+}
+
+/*Our Brands Slider*/
+.our-brands {
+
+    &__wrapp {
+        padding-bottom: 100px;
+    }
+}
+
+.brands-slider__item {
+    margin-left: 44px;
+}
+
+/*Customer*/
+.customer-say {
+    background: $sand url('/images/customer/customer-bg.png') no-repeat center top;
+    background-size: cover;
+
+    &__wrapp {
+        display: flex;
+        justify-content: space-between;
+        padding: 35px 20px 50px;
+    }
+
+    &__block {
+        display: flex;
+
+        &_text_right {
+            text-align: right;
+        }
+    }
+
+    &__avatar {
+        max-width: 254px;
+    }
+
+    &__content {
+        max-width: 290px;
+        margin-top: 100px;
+    }
+
+    &__text {
+        @include playfairDisplayItalicWhite;
+        font-size: 18.1px;
+        line-height: 30px;
+        margin-bottom: 55px;
+    }
+
+    &__name {
+        @include playfairDisplayBoldItalic;
+        font-size: 30px;
+        line-height: 18px;
+        margin-bottom: 25px;
+    }
+
+    &__profession {
+        font-family: 'Lato Bolt';
+        font-size: 14px;
+        line-height: 22px;
+        color: $dark-smoke;
+    }
+}
+
+/*Footer*/
+.footer {
+    background: $dark;
+
+    &__wrapp {
+        padding: 70px 20px 30px;
+    }
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid $dirty-dark;
+    padding-bottom: 85px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -2.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid $dirty-dark;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+    }
+
+    &__card-header {
+        @include latoBoltWhite;
+        margin-bottom: 45px;
+
+        &_text_wide {
+            letter-spacing: 1px;
+        }
+    }
+
+    &__item {
+        margin-bottom: 15px;
+    }
+
+    &__item-link {
+        font-family: 'Lato Regular';
+        font-size: 14px;
+        color: $dark-grey;
+    }
+
+    &__social {
+        margin-bottom: 50px;
+    }
+
+    &__social-link:not(:last-child) {
+        margin-right: 16px;
+    }
+
+    &__in {
+        font-family: 'Playfair Display Italic';
+    }
+
+    &__form {
+        width: 362px;
+        position: relative;
+    }
+
+    &__text {
+        width: 100%;
+        background: transparent;
+        border: 1px solid $dirty-black;
+        border-radius: 3px;
+        padding: 13px 120px 13px 22px;
+        outline-style: none;
+        color: $white;
+    }
+
+    &__btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include latoRegularWhite;
+        font-size: 12px;
+        background: $dirty-asphalt;
+        padding: 9px 19px;
+    }
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    &__info {
+        font-family: 'Lato Regular';
+        font-size: 11px;
+        line-height: 18px;
+        color: $dirty-dark;
+    }
+
+    &__way-up {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: $black;
+        border-radius: 3px;
+    }
+
+    &__arrow-up {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/*Responsive*/
+@import "responsive";
